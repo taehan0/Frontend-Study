@@ -1,0 +1,137 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=DotGothic16&family=IBM+Plex+Sans+KR:wght@400;700&display=swap");
+
+:root {
+  --backdrop: #26324a;   /* 기계 뒤 배경 (남색) */
+  --panel: #e9eef2;      /* 기계 본체 기본색 */
+  --ink: #1e2433;        /* 글자, 테두리 */
+  --key: #ffffff;        /* 키 윗면 */
+  --lcd: #c3cfae;        /* 액정 배경 */
+  --lcd-text: #25301d;   /* 액정 숫자 */
+  --arcade: #f2542d;     /* 오락실 버튼 */
+  --arcade-dark: #8e2a12;/* 오락실 버튼 옆면 */
+}
+
+
+html {
+  min-height: 100%;
+  background-color: var(--backdrop);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+}
+
+
+body {
+  width: min(400px, 100% - 32px);
+  box-sizing: border-box;
+  margin: 56px auto;
+  padding: 36px 28px 40px;
+  background-color: var(--panel);
+  border: 3px solid var(--ink);
+  border-radius: 28px;
+  box-shadow:
+    0 14px 0 var(--ink),                 /* 아래쪽 두께감 */
+    0 36px 60px rgba(0, 0, 0, 0.35);     /* 바닥 그림자 */
+  font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  color: var(--ink);
+  transition: background-color 0.4s;
+
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+
+h1 {
+  grid-column: 1 / -1;
+  margin: 0 0 12px;
+  font-family: "Black Han Sans", "Apple SD Gothic Neo", sans-serif;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+button {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  padding: 14px 10px;
+  background-color: var(--key);
+  border: 3px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 0 6px 0 var(--ink);  
+  cursor: pointer;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+
+button:hover {
+  background-color: #f6f8fa;
+}
+
+
+button:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+
+button:focus-visible {
+  outline: 3px solid var(--arcade);
+  outline-offset: 4px;
+}
+
+
+p {
+  grid-column: 1 / -1;
+  margin: 22px 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+#count {
+  display: block;
+  margin-top: 8px;
+  padding: 4px 20px;
+  background-color: var(--lcd);
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: inset 0 5px 0 rgba(0, 0, 0, 0.12);  /* 안쪽으로 파인 느낌 */
+  font-family: "DotGothic16", monospace;
+  font-size: 72px;
+  line-height: 1.2;
+  text-align: right;
+  color: var(--lcd-text);
+}
+
+
+#plus {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 128px;
+  height: 128px;
+  margin-top: 18px;
+  border-radius: 50%;
+  background-color: var(--arcade);
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 0 10px 0 var(--arcade-dark), 0 10px 0 3px var(--ink);
+}
+
+#plus:hover {
+  background-color: #ff6a42;
+}
+
+#plus:active {
+  transform: translateY(10px);
+  box-shadow: 0 0 0 var(--arcade-dark), 0 0 0 3px var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
