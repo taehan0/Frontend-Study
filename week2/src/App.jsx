@@ -1,16 +1,16 @@
 import "./App.css";
 
 function App() {
-  const username = "eden";
-  const location = "Seoul, Korea";
-  const likeCount = 8888;
-  const caption = "FE Tasting Study WEEK 2";
+  const username = "TaeHan Kim";
+  const location = "Hongik Univ., Seoul, Korea";
+  const likeCount = 999999999;
+  const caption = "Today's HW";
 
   return (
     <main className="feed">
       <article className="post">
         <header className="profile">
-          <img className="profile-image" src="/images/eden-avatar.png" alt="프로필" />
+          <img className="profile-image" src="/images/profile.png" alt="프로필" />
 
           <div className="profile-text">
             {/* 여기! */}
@@ -19,7 +19,7 @@ function App() {
           </div>
           <button className="more-button">•••</button>
         </header>
-        <img className="post-image" src="/images/picasso.png" alt="피카소 캐릭터" />
+        <img className="post-image" src="/images/MILE.png" alt="앨범 커버" />
         <section className="content">
           <div className="actions">
             <div>
